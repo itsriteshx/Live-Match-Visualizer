@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #05080f;
+  --color-secondary: #0a1628;
+  --color-accent-cyan: #00e5ff;
+  --color-accent-gold: #ffd000;
+  --color-accent-red: #ff1744;
+  --color-accent-green: #00e676;
+  --color-accent-purple: #b388ff;
+  --color-muted: #8892a4;
+
+  --font-display: "Orbitron", sans-serif;
+  --font-label: "Rajdhani", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --shadow-glow-cyan: 0 0 20px rgba(0,229,255,0.4);
+  --shadow-glow-cyan-lg: 0 0 35px rgba(0,229,255,0.6);
+  --shadow-glow-gold: 0 0 20px rgba(255,208,0,0.4);
+  --shadow-glow-gold-lg: 0 0 40px rgba(255,208,0,0.6);
+  --shadow-glow-red: 0 0 30px rgba(255,23,68,0.6);
+  --shadow-glow-red-lg: 0 0 40px rgba(255,23,68,0.8);
+  --shadow-glow-green: 0 0 20px rgba(0,230,118,0.4);
+  --shadow-glow-green-lg: 0 0 30px rgba(0,230,118,0.5);
+
+  --animate-card-mount: cardMount 0.6s ease both;
+  --animate-mesh-drift: meshDrift 8s ease-in-out infinite alternate;
+  --animate-live-pulse: livePulse 1.5s ease-in-out infinite;
+  --animate-ball-slide-in: ballSlideIn 0.3s ease both;
+  --animate-wicket-shake: wicketShake 0.4s ease;
+  --animate-row-flash-red: rowFlashRed 0.5s ease;
+  --animate-glow-pulse-gold: glowPulseGold 1.5s infinite;
+  --animate-glow-pulse-red: glowPulseRed 1.5s infinite;
+  --animate-glow-pulse-red-fast: glowPulseRedFast 0.6s infinite;
+  --animate-glow-pulse-green: glowPulseGreen 2s infinite;
+  --animate-glow-pulse-cyan: glowPulseCyan 1.5s infinite;
+  --animate-insight-slide-in: insightSlideIn 0.4s ease both;
+  --animate-aura-rotate: auraRotate 3s linear infinite;
+  --animate-toast-in-out: toastIn 0.3s ease, toastOut 0.3s ease 1.7s forwards;
+  --animate-vp-flash: vpFlash 0.4s ease forwards;
+  --animate-screen-shake: screenShake 0.3s ease;
+  --animate-particle-burst: particleBurst 1s ease-out forwards;
+  --animate-shimmer-slide: shimmerSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes cardMount {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes meshDrift {
+  0% { background-color: #05080f; }
+  50% { background-color: #070d1a; }
+  100% { background-color: #0a1628; }
+}
+@keyframes livePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,23,68,0.6); }
+  50% { box-shadow: 0 0 0 8px rgba(255,23,68,0); }
+}
+@keyframes ballSlideIn {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes wicketShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+@keyframes rowFlashRed {
+  0% { background-color: rgba(255,23,68,0.3); }
+  100% { background-color: transparent; }
+}
+@keyframes glowPulseGold {
+  0%, 100% { box-shadow: 0 0 15px rgba(255,208,0,0.3); }
+  50% { box-shadow: 0 0 35px rgba(255,208,0,0.6); }
+}
+@keyframes glowPulseRed {
+  0%, 100% { box-shadow: 0 0 15px rgba(255,23,68,0.3); }
+  50% { box-shadow: 0 0 35px rgba(255,23,68,0.6); }
+}
+@keyframes glowPulseRedFast {
+  0%, 100% { box-shadow: 0 0 10px rgba(255,23,68,0.3); }
+  50% { box-shadow: 0 0 40px rgba(255,23,68,0.8); }
+}
+@keyframes glowPulseGreen {
+  0%, 100% { box-shadow: 0 0 15px rgba(0,230,118,0.2); }
+  50% { box-shadow: 0 0 30px rgba(0,230,118,0.5); }
+}
+@keyframes glowPulseCyan {
+  0%, 100% { box-shadow: 0 0 10px rgba(0,229,255,0.2); }
+  50% { box-shadow: 0 0 25px rgba(0,229,255,0.5); }
+}
+@keyframes insightSlideIn {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes auraRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes toastIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes toastOut {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+@keyframes vpFlash {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes screenShake {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-3px, -2px); }
+  30% { transform: translate(3px, 2px); }
+  50% { transform: translate(-2px, 3px); }
+  70% { transform: translate(2px, -3px); }
+  90% { transform: translate(-1px, 1px); }
+}
+@keyframes particleBurst {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--px), var(--py)) scale(0.3); }
+}
+@keyframes shimmerSlide {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-gray-200 font-body overflow-x-hidden antialiased;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .glass-panel {
+    @apply bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl;
+  }
+}
+
+/* Recharts overrides */
+.recharts-cartesian-axis-tick-value,
+.recharts-polar-angle-axis-tick-value,
+.recharts-legend-item-text {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 12px !important;
+  fill: #8892a4 !important;
+  color: #8892a4 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
