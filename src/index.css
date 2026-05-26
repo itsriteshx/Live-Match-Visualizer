@@ -41,6 +41,8 @@
   --animate-screen-shake: screenShake 0.3s ease;
   --animate-particle-burst: particleBurst 1s ease-out forwards;
   --animate-shimmer-slide: shimmerSlide 1.5s ease-in-out infinite;
+  --animate-score-pulse: scorePulse 1s ease;
+  --animate-score-slide-in: scoreSlideIn 0.5s ease;
 }
 
 @keyframes cardMount {
@@ -126,6 +128,14 @@
 @keyframes shimmerSlide {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
+}
+@keyframes scorePulse {
+  0%, 100% { text-shadow: 0 0 20px rgba(255,208,0,0.4); transform: scale(1); }
+  50% { text-shadow: 0 0 40px rgba(255,208,0,0.9); transform: scale(1.04); }
+}
+@keyframes scoreSlideIn {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @layer base {

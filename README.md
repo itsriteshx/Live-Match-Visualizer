@@ -1,16 +1,31 @@
-# React + Vite
+# Live Match Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live cricket analytics dashboard powered by [CricAPI](https://www.cricapi.com/).
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+cp .env.example .env   # add your CricAPI key
+npm run dev
+```
 
-## React Compiler
+## Environment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Variable | Description |
+|----------|-------------|
+| `VITE_CRICAPI_KEY` | API key from [cricapi.com](https://www.cricapi.com/) |
 
-## Expanding the ESLint configuration
+## Data flow
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **On load** — `GET /v1/currentMatches` → match dropdown
+2. **Per match** — `GET /v1/match_scorecard?id={matchId}` → scoreboard, players, stats
+3. **Every 30s** — silent refresh of current matches + selected scorecard
+
+Status badge: **● LIVE CRICAPI** when connected. All scores come from the API — no mock/demo data. On error, shows cached data or an empty error state.
+
+## Scripts
+
+- `npm run dev` — development server
+- `npm run build` — production build
+- `npm run lint` — ESLint
